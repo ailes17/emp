@@ -6,10 +6,10 @@ The following repo contains a springboot app responsible for building emp platfo
 ## Frameworks
 The project is implemented using the following technologies
 
-1. Java Version 11
-2. Spring Boot Version 2.7.0
-3. Mongo 4
-4. OpenAPI 1.6.9
+1. **Java Version 11**
+2. **Spring Boot Version 2.7.0**
+3. **Mongo 4**
+4. **OpenAPI 1.6.9**
 
 ## Guidelines
 Please follow the below steps to get the application up and running
@@ -66,8 +66,8 @@ Concurrency scenario where two users try to update, at the same time, an employe
 3. Employee entity in DB is now : (**PENDING**, WORK_PERMIT_CHECK_STARTED, SECURITY_CHECK_STARTED)
 4. User2 triggers at the same time an update : (**IN_CHECK**, WORK_PERMIT_CHECK_STARTED, SECURITY_CHECK_FINISHED)
 5. While fetching the entity from DB, we check for the status, if it's pending, the call is rejected with 401 Unauthorized operation
-6a. User1 finishes the update and now the states in DB are :  (**IN_CHECK**, WORK_PERMIT_CHECK_FINISHED, SECURITY_CHECK_STARTED)
-6b. Error while updating the user (for example the states are not valid), and in this case we restore the previous state : (**IN_CHECK**, WORK_PERMIT_CHECK_STARTED, SECURITY_CHECK_STARTED)
+6. User1 finishes the update and now the states in DB are :  (**IN_CHECK**, WORK_PERMIT_CHECK_FINISHED, SECURITY_CHECK_STARTED)
+7. Error while updating the user (for example the states are not valid), and in this case we restore the previous state : (**IN_CHECK**, WORK_PERMIT_CHECK_STARTED, SECURITY_CHECK_STARTED)
 
 
 ### Main endpoints
