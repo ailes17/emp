@@ -99,7 +99,7 @@ public class EmployeeCheckHelper {
 
 	private static void checkGlobalStates(GlobalState oldGS, GlobalState newGS) throws EMPException {
 		if (oldGS != newGS && oldGS.nextState() != newGS) {
-			throw new EMPException(newGS + "is not a valid transition from " + oldGS, HttpStatus.BAD_REQUEST.value());
+			throw new EMPException(newGS + " is not a valid transition from " + oldGS, HttpStatus.BAD_REQUEST.value());
 		}
 	}
 	

@@ -81,7 +81,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		
 		try {
 			if (mongoService.doesEmployeeExist(employee.getFirstName(), employee.getLastName(), employee.getAge())) {
-				throw new EMPException("Employee does already exist", HttpStatus.NOT_FOUND.value());
+				throw new EMPException("Employee does already exist", HttpStatus.CONFLICT.value());
 			}
 			
 			EmployeeCheckHelper.initializeState(employee);
