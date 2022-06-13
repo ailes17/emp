@@ -37,23 +37,25 @@ Please follow the below steps to get the application up and running
 ![Class Diagram](emp-class-diagram.png)
 
 
-### Update Activity diagram
-![Class Diagram](emp-update-activity-diagram.png)
+### "Update" Activity diagram
+![Update Activity diagram](emp-update-activity-diagram.png)
 
 ## Documentation
 ### Specifications
 The specifications used for this project have been taken from the following sources : 
->[Guidelines](spec/GUIDELINES.md)
->[Challenge description (Senior)](spec/SENIOR_CHALLENGE.md)
->[Diagram](spec/senior_challenge_state_transition_diagram.png)
+> [Guidelines](spec/GUIDELINES.md)
+
+> [Challenge description (Senior)](spec/SENIOR_CHALLENGE.md)
+
+> [Diagram](spec/senior_challenge_state_transition_diagram.png)
 
 On top of the described functionalities, the following points have been added (assumed) :
-* When a user is created, the global state and the substates are not enforced, those will be initialized to (respectively) : ADDED, null and null
+* When a user is created, the global state and the substates are not enforced, those will be initialized to (respectively) : **ADDED**, **null** and **null**
 	If different states are filled out, those will be overriden by the values listed above
 
-* While in state : IN-CHECK, we are only permitting one substate change by update at a time, the substates SecurityCheck and WorkPermitCheck can not be modified both in the same update
+* While in state : **IN_CHECK**, we are only permitting one substate change by update at a time, the substates SecurityCheck and WorkPermitCheck can not be modified both in the same update
 
-* Once the employee is in APPROVED state, both substates with the finish status can not be modified anymore, only ACTIVE action is permitted
+* Once the employee is in **APPROVED** state, both substates with the finish status can not be modified anymore, only **ACTIVE** action is permitted
 
 ### Concurrency
 Concurrency scenario where two users try to update, at the same time, an employee is handled as described below :
