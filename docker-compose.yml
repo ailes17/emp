@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  emp-mongo:
+    image: mongo:latest
+    container_name: "emp-mongo"
+    ports:
+      - 27017:27017
+  emp-service:
+    build: .
+    container_name: "emp-service"
+    ports:
+      - 8080:8080
+      - 8787:8787
+    links:
+      - emp-mongo
